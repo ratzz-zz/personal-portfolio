@@ -1,0 +1,21 @@
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+out/
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+node_modules/
+target/
+build/
+
+# Environment files
+.env
+.env.local
