@@ -1,0 +1,203 @@
+:root {
+    --font-title: 'Manufacturing-Consent', sans-serif;
+    --font-body: 'Merriweather', serif;
+    --color-text: #242021;
+    --color-background: #f8f6f5;
+    --color-accent: #504e76;
+    --color-accent-light: #c4c3e3
+}
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* General Gothic Style */
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #eaeaea; /* Light text */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Manufacturing Consent', serif;
+    color: #c0c0c0; /* Gothic text color */
+}
+
+a {
+    color: #c0c0c0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #eaeaea;
+}
+
+/* Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0f0f0f; /* Gothic dark navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#navbar .logo img {
+    width: 50px; /* Small logo */
+}
+
+#navbar .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+#navbar .nav-links li a {
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+}
+
+/* Welcome Section */
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Occupy full screen */
+    text-align: center;
+    background-color: #121212; /* Gothic background */
+}
+
+.skill-icons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 2rem 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    margin: 1rem 0;
+}
+
+.description {
+    max-width: 600px;
+    margin-top: 1rem;
+}
+
+/* Skills Section */
+#skills {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background-color: #1a1a1a;
+}
+
+.skill-card {
+    background-color: #2a2a2a; /* Gothic card background */
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 30%;
+    text-align: center;
+}
+
+/* Experience Section */
+#experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #1a1a1a;
+}
+
+.experience-card {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 80%;
+}
+
+/* Projects Section */
+#projects {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background-color: #1a1a1a;
+}
+
+.project-tile {
+    position: relative;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    width: 30%;
+    height: 200px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.project-tile h3, .project-tile p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-tile:hover h3, .project-tile:hover p {
+    opacity: 1;
+}
+
+/* Contact Section */
+#contact {
+    padding: 2rem;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+form input, form textarea, form button {
+    width: 80%;
+    padding: 0.5rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #eaeaea;
+}
+
+form button {
+    cursor: pointer;
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #666;
+}
