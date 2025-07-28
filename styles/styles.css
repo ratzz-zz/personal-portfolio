@@ -20,30 +20,33 @@ html {
     scroll-behavior: smooth;
 }
 
-/* General Gothic Style */
 body {
-    font-family: 'Merriweather', serif;
-    background-color: #1a1a1a; /* Dark background */
-    color: #eaeaea; /* Light text */
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100vh;
 }
 
+/*
 h1, h2, h3 {
     font-family: 'Manufacturing Consent', serif;
-    color: #c0c0c0; /* Gothic text color */
-}
+    color: #c0c0c0;
+}*/
 
 a {
-    color: #c0c0c0;
+    color: var(--color-text);
     text-decoration: none;
 }
 
 a:hover {
-    color: #eaeaea;
+    color: var(--color-accent);
+    font-weight: bold;
 }
 
-/* Navbar */
+/* NAVBAR */
 #navbar {
     position: fixed;
     top: 0;
@@ -51,25 +54,25 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #0f0f0f; /* Gothic dark navbar */
+    padding: 1rem 3.5rem;
+    background-color: var(--color-accent-light);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
 #navbar .logo img {
-    width: 50px; /* Small logo */
+    width: 60px;
 }
 
 #navbar .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     list-style: none;
 }
 
 #navbar .nav-links li a {
-    font-size: 1rem;
-    font-family: 'Merriweather', serif;
+    font-size: 1.6rem;
+    font-family: var(--font-text);
 }
 
 /* Welcome Section */
