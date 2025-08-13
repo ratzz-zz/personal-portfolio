@@ -197,10 +197,56 @@ a:hover {
     align-items: center;
 }
 
-/* Add any section-specific spacing */
 #welcome-section h1 span {
     font-size: 4rem;
-    /*font-family: var(--font-body);*/  
+}
+
+/* ABOUT ME SECTION */
+#about-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 10rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+#about-me h1 {
+    font-family: var(--font-title);
+    font-size: 4rem;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 5rem;
+}
+
+#about-me .profile-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#about-me .profile-image img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-strong);
+}
+
+#about-me .about-me-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    max-width: 600px;
+    margin-left: 2rem;
+    margin-top: 5rem;
+}
+
+#about-me p {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    line-height: 2;
+    color: var(--color-text);
 }
 
 /* Skills Section */
