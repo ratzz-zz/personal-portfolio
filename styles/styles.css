@@ -1,12 +1,19 @@
 :root {
-    --font-title: 'Manufacturing-Consent', sans-serif;
+    --font-title: 'Manufacturing Consent', sans-serif;
     --font-body: 'Merriweather', serif;
-    --color-text: #242021;
-    --color-background: #f8f6f5;
-    --color-accent: #504e76;
-    --color-accent-light: #c4c3e3
+    --color-text: #e4e0d7;
+    --color-background: #1e1e1e;
+    --color-accent: #b30059;
+    --color-accent-light: #d63384;
+    --color-border: #3a3a3a;
+    --color-muted: #888888;
+
+    /* Shadows & Effects */
+    --shadow-strong: 0 0 15px rgba(179, 0, 89, 0.4);
+    --shadow-soft: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/* GENERAL */
 *,
 ::before,
 ::after {
@@ -20,6 +27,10 @@ html {
     scroll-behavior: smooth;
 }
 
+:target {
+    scroll-margin-top: 80px;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--color-background);
@@ -27,23 +38,36 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-
-/*
-h1, h2, h3 {
-    font-family: 'Manufacturing Consent', serif;
-    color: #c0c0c0;
-}*/
 
 a {
     color: var(--color-text);
     text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
     color: var(--color-accent);
+    text-shadow: var(--shadow-strong);
     font-weight: bold;
+    outline: 2px dashed var(--color-accent);
+    outline-offset: 4px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* NAVBAR */
@@ -72,37 +96,111 @@ a:hover {
 
 #navbar .nav-links li a {
     font-size: 1.6rem;
-    font-family: var(--font-text);
+    font-family: var(--font-body);
+    font-weight: 700;
+}
+a:hover {
+    color: var(--color-accent);
+    outline: 2px dashed var(--color-accent);
+    outline-offset: 4px;
 }
 
-/* Welcome Section */
+/* WELCOME SECTION */
 #welcome-section {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh; /* Occupy full screen */
-    text-align: center;
-    background-color: #121212; /* Gothic background */
+    justify-content: space-between;
+    height: calc(100vh - 6rem);
+    padding: 2rem 10rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+#welcome-section h1 {
+    font-family: var(--font-title);
+    font-size: 8rem;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+#welcome-section h2 {
+    font-family: var(--font-body);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    color: var(--color-accent-light);
 }
 
 .skill-icons {
     display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
     justify-content: space-evenly;
-    width: 80%;
-    margin: 2rem 0;
 }
 
 .social-icons {
     display: flex;
-    justify-content: space-evenly;
-    width: 60%;
-    margin: 1rem 0;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .description {
-    max-width: 600px;
-    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    margin-top: 5rem;
+}
+
+.description p {
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+.skill-icons svg {
+    width: 50px;
+    height: 50px;
+}
+
+.social-icons svg {
+    width: 80px;
+    height: 80px;
+}
+
+.skill-icons svg,
+.social-icons svg {
+    transition: transform 0.3s ease;
+}
+
+.skill-icons svg:hover,
+.social-icons svg:hover {
+    transform: scale(1.2);
+}
+
+/* Left Side (Text and Icons) */
+#left-side {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#right-side {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add any section-specific spacing */
+#welcome-section h1 span {
+    font-size: 4rem;
+    /*font-family: var(--font-body);*/  
 }
 
 /* Skills Section */
