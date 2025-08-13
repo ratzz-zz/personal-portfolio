@@ -213,9 +213,10 @@ a:hover {
 
 #about-me h1 {
     font-family: var(--font-title);
+    color: var(--color-accent);
     font-size: 4rem;
     line-height: 1.2;
-    text-align: left;
+    text-align: center;
     margin-bottom: 5rem;
 }
 
@@ -249,102 +250,65 @@ a:hover {
     color: var(--color-text);
 }
 
-/* Skills Section */
+/* SKILLS SECTION */
 #skills {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2rem;
-    background-color: #1a1a1a;
-}
-
-.skill-card {
-    background-color: #2a2a2a; /* Gothic card background */
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 1rem;
-    width: 30%;
-    text-align: center;
-}
-
-/* Experience Section */
-#experience {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    background-color: #1a1a1a;
+    padding: 2rem 10rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
-.experience-card {
-    background-color: #2a2a2a;
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    width: 80%;
+#skills h2 {
+    font-family: var(--font-title);
+    color: var(--color-accent);
+    font-size: 3.8rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 5rem;
 }
 
-/* Projects Section */
-#projects {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2rem;
-    background-color: #1a1a1a;
-}
+#skills .skills-container {
+     display: flex;
+     justify-content: space-between;
+     gap: 20px;
+     flex-wrap: wrap;
+ }
 
-.project-tile {
-    position: relative;
-    background-color: #2a2a2a;
-    border: 1px solid #444;
-    border-radius: 8px;
-    width: 30%;
-    height: 200px;
-    overflow: hidden;
+#skills .skill-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--color-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-strong);
     text-align: center;
 }
 
-.project-tile h3, .project-tile p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.skill-card h3 {
+    font-family: var(--font-body);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--color-text);
 }
 
-.project-tile:hover h3, .project-tile:hover p {
-    opacity: 1;
+.skill-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Contact Section */
-#contact {
-    padding: 2rem;
-    background-color: #1a1a1a;
-    text-align: center;
+.skill-card ul li {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--color-background);
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+.skill-card ul li:hover {
+    transform: scale(1.05);
+    color: var(--color-accent-light);
 }
 
-form input, form textarea, form button {
-    width: 80%;
-    padding: 0.5rem;
-    border: 1px solid #444;
-    border-radius: 4px;
-    background-color: #2a2a2a;
-    color: #eaeaea;
-}
-
-form button {
-    cursor: pointer;
-    background-color: #444;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #666;
-}
+/* PROJECTS SECTION */
