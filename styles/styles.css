@@ -327,3 +327,166 @@ a:hover {
     text-align: center;
     margin-bottom: 5rem;
 }
+
+.experience-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.timeline {
+    background: var(--color-background);
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    max-width: 600px;
+}
+
+/* setting padding based on even or odd */
+.card:nth-child(odd) {
+    padding: 30px 0 30px 30px;
+}
+.card:nth-child(even) {
+    padding: 30px 30px 30px 0;
+}
+/* Global ::before */
+.card::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border: solid var(--color-border);
+}
+
+/* Setting the border of top, bottom, left */
+.card:nth-child(odd)::before {
+    left: 0px;
+    top: -4.5px;
+    bottom: -4.5px;
+    border-width: 5px 0 5px 5px;
+    border-radius: 50px 0 0 50px;
+}
+
+/* Setting the border of top, bottom, right */
+.card:nth-child(even)::before {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first card */
+.card:first-child::before {
+    border-top: 0;
+    border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's odd */
+.card:last-child:nth-child(odd)::before {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's even */
+.card:last-child:nth-child(even)::before {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-background);
+    color: var(--color-text);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.info h3 {
+    font-family: var(--font-body);
+    font-size: 2.2rem;
+    color: var(--color-border);
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.info h3::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color-text);
+    border-radius: 999px;
+    border: 3px solid var(--color-border);
+}
+
+.card:nth-child(even) > .info > .title {
+    text-align: right;
+}
+
+.card:nth-child(odd) > .info > .title::before {
+    left: -45px;
+}
+
+.card:nth-child(even) > .info > .title::before {
+    right: -45px;
+}
+
+.info p {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+.info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info ul li {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.info .year {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    color: var(--color-accent);
+    margin: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.info .company {
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    color: var(--color-border);
+    margin-bottom: 5px;
+}
+
+/* PROJECTS SECTION */
+
+#projects {
+    align-items: center;
+    padding: 2rem 10rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+#projects h2 {
+    font-family: var(--font-title);
+    color: var(--color-accent);
+    font-size: 3.8rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
