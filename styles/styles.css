@@ -410,7 +410,7 @@ a:hover {
     font-size: 2.2rem;
     color: var(--color-border);
     margin-bottom: 10px;
-    position: relative;
+    /*position: relative;*/
 }
 
 .info h3::before {
@@ -421,18 +421,20 @@ a:hover {
     background: var(--color-text);
     border-radius: 999px;
     border: 3px solid var(--color-border);
+    top: 50%;
+    transform: translateY(-50%) translateX(-8px);
 }
 
 .card:nth-child(even) > .info > .title {
     text-align: right;
 }
 
-.card:nth-child(odd) > .info > .title::before {
-    left: -45px;
+.card:nth-child(odd) > .info > h3::before {
+    left: 5.5px; /* Half of timeline's 5px border */
 }
 
-.card:nth-child(even) > .info > .title::before {
-    right: -45px;
+.card:nth-child(even) > .info > h3::before {
+    left: calc(100% + 1.6px); /* Align to right edge minus half border */
 }
 
 .info p {
@@ -475,7 +477,6 @@ a:hover {
 /* PROJECTS SECTION */
 
 #projects {
-    align-items: center;
     padding: 2rem 10rem;
     background-color: var(--color-background);
     color: var(--color-text);
@@ -485,8 +486,45 @@ a:hover {
     font-family: var(--font-title);
     color: var(--color-accent);
     font-size: 3.8rem;
-    line-height: 1.2;
     text-align: center;
     margin-bottom: 5rem;
+}
+
+#projects .projects-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--color-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-strong);
+    text-align: center;
+}
+
+.project-card h3 {
+    font-family: var(--font-body);
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: var(--color-border);
+}
+
+.project-card p {
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.project-card p:hover {
+    transform: scale(1.05);
+    color: var(--color-accent-light);
 }
 
