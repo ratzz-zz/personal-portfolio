@@ -2,9 +2,9 @@
     --font-title: 'Manufacturing Consent', sans-serif;
     --font-body: 'Merriweather', serif;
     --color-text: #e4e0d7;
-    --color-background: #888888;
-    --color-accent: #b30059;
-    --color-accent-light: #d63384;
+    --color-background: #1B1A1A; /*#888888;*/
+    --color-accent: #D70074;
+    --color-accent-light: #8B004B;
     --color-border: #3a3a3a;
 
     /* Shadows & Effects */
