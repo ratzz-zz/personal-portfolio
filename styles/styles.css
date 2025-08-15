@@ -7,9 +7,8 @@
     --color-accent-light: #8B004B;
     --color-border: #3a3a3a;
 
-    /* Shadows & Effects */
+    /* Shadows */
     --shadow-strong: 0 0 15px rgba(179, 0, 89, 0.4);
-    --shadow-soft: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* GENERAL */
@@ -314,6 +313,8 @@ a:hover {
 /* EXPERIENCE SECTION */
 
 #experience {
+    max-width: 1200px;
+    margin: 0 auto;
     align-items: center;
     padding: 2rem 10rem;
     background-color: var(--color-background);
@@ -400,28 +401,31 @@ a:hover {
 .info {
     display: flex;
     flex-direction: column;
-    background: var(--color-background);
+    background: var(--color-background); /*#450025;*/
     color: var(--color-text);
+    border: 2px dotted var(--color-accent);
+    box-shadow: var(--shadow-strong);
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .info h3 {
     font-family: var(--font-body);
     font-size: 2.2rem;
-    color: var(--color-border);
+    color: var(--color-accent-light);
     margin-bottom: 10px;
+    font-weight: bold;
     /*position: relative;*/
 }
 
 .info h3::before {
     content: "";
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background: var(--color-text);
+    width: 15px;
+    height: 15px;
+    background: var(--color-border);
     border-radius: 999px;
-    border: 3px solid var(--color-border);
+    border: 3px solid var(--color-accent-light);
     top: 50%;
     transform: translateY(-50%) translateX(-8px);
 }
@@ -431,11 +435,13 @@ a:hover {
 }
 
 .card:nth-child(odd) > .info > h3::before {
-    left: 5.5px; /* Half of timeline's 5px border */
+    left: 3px;
+    top: 50px;
 }
 
 .card:nth-child(even) > .info > h3::before {
-    left: calc(100% + 1.6px); /* Align to right edge minus half border */
+    left: calc(100% - 3px);
+    top: 50px;
 }
 
 .info p {
@@ -454,7 +460,7 @@ a:hover {
 .info ul li {
     font-family: var(--font-body);
     font-size: 1.6rem;
-    line-height: 1.5;
+    line-height: 1.8;
     color: var(--color-text);
     margin-bottom: 8px;
 }
@@ -462,17 +468,20 @@ a:hover {
 .info .year {
     font-family: var(--font-title);
     font-size: 2rem;
-    color: var(--color-accent);
+    color: var(--color-accent-light);
     margin: 10px;
     text-align: right;
     font-weight: bold;
+    padding-right: 20px;
 }
 
 .info .company {
     font-family: var(--font-body);
     font-size: 1.8rem;
+    font-weight: bolder;
     color: var(--color-border);
     margin-bottom: 5px;
+    padding-left: 20px;
 }
 
 /* PROJECTS SECTION */
