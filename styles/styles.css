@@ -8,6 +8,11 @@
     --color-border: #3a3a3a;
     --shadow-strong: 0 0 15px rgba(179, 0, 89, 0.4);
     --curve: 40;
+
+    /* Responsive breakpoints */
+    --mobile-max: 768px;
+    --tablet-max: 1024px;
+    --desktop-min: 1025px;
 }
 
 /* GENERAL */
@@ -52,6 +57,17 @@ a:hover {
     outline-offset: 4px;
 }
 
+/* Common section headings */
+.section-heading {
+    font-family: var(--font-title);
+    color: var(--color-accent);
+    font-size: 3.8rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+/* Common animations */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -65,7 +81,32 @@ a:hover {
     }
 }
 
-/* NAVBAR */
+/* Common SVG icon styles */
+.icon-svg {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.icon-svg:hover {
+    transform: scale(1.2);
+}
+
+/* Unified social icon styles and animations */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* ==========================================
+   NAVBAR STYLES
+   ========================================== */
 #navbar {
     position: fixed;
     top: 0;
@@ -95,7 +136,9 @@ a:hover {
     font-weight: 700;
 }
 
-/* WELCOME SECTION */
+/* ==========================================
+   WELCOME SECTION
+   ========================================== */
 #welcome-section {
     display: flex;
     align-items: center;
@@ -159,19 +202,6 @@ a:hover {
     color: var(--color-text);
 }
 
-.skill-icons svg,
-.social-icons svg {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease;
-}
-
-.skill-icons svg:hover,
-.social-icons svg:hover {
-    transform: scale(1.2);
-}
-
-/* Left Side (Text and Icons) */
 #left-side {
     flex-basis: 50%;
     display: flex;
@@ -186,7 +216,9 @@ a:hover {
     align-items: center;
 }
 
-/* ABOUT ME SECTION */
+/* ==========================================
+   ABOUT ME SECTION
+   ========================================== */
 #about-me {
     display: flex;
     align-items: center;
@@ -235,7 +267,9 @@ a:hover {
     color: var(--color-text);
 }
 
-/* SKILLS SECTION */
+/* ==========================================
+   SKILLS SECTION
+   ========================================== */
 #skills {
     align-items: center;
     padding: 2rem 10rem;
@@ -254,16 +288,14 @@ a:hover {
     margin-bottom: 5rem;
 }
 
-#skills .skills-container,
-#projects .projects-container {
+#skills .skills-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.skill-card,
-.project-card {
+.skill-card {
     flex: 1;
     min-width: 250px;
     background-color: var(--color-background);
@@ -273,20 +305,12 @@ a:hover {
     text-align: center;
 }
 
-.skill-card h3,
-.project-card h3 {
+.skill-card h3 {
     font-family: var(--font-body);
     font-size: 2.2rem;
     margin-bottom: 30px;
     font-weight: bold;
-}
-
-.skill-card h3 {
     color: var(--color-accent-light);
-}
-
-.project-card h3 {
-    color: var(--color-border);
 }
 
 .skill-card ul {
@@ -309,7 +333,9 @@ a:hover {
     color: var(--color-accent-light);
 }
 
-/* EXPERIENCE SECTION */
+/* ==========================================
+   EXPERIENCE SECTION
+   ========================================== */
 #experience {
     max-width: 1200px;
     margin: 0 auto;
@@ -469,7 +495,9 @@ a:hover {
     padding-left: 20px;
 }
 
-/* PROJECTS SECTION */
+/* ==========================================
+   PROJECTS SECTION
+   ========================================== */
 #projects {
     padding: 2rem 10rem;
     background-color: var(--color-background);
@@ -589,25 +617,9 @@ a:hover {
     line-height: 1.6;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin: 40px 0;
-    color: var(--color-accent);
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--color-accent);
-    margin: 15px auto;
-    border-radius: 2px;
-}
-
-/* FORM SECTION */
+/* ==========================================
+   CONTACT SECTION
+   ========================================== */
 #contact {
     padding: 6rem 10rem;
     background-color: var(--color-background);
@@ -624,24 +636,121 @@ a:hover {
 }
 
 .contact-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info {
     display: flex;
     flex-direction: column;
     gap: 3rem;
 }
 
-.contact-info {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.contact-info p {
+.contact-info > p {
     font-family: var(--font-body);
     font-size: 1.8rem;
     line-height: 1.6;
     color: var(--color-text);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--color-border);
+    border-radius: calc(var(--curve) * 0.5px);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-strong);
+    transform: translateY(-2px);
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.contact-details h3 {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--color-accent-light);
+    margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.contact-social {
+    padding: 2rem;
+    background-color: var(--color-border);
+    border-radius: calc(var(--curve) * 0.5px);
+    border: 2px dotted var(--color-accent);
+    text-align: center;
+}
+
+.contact-social h3 {
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-accent-light);
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    color: var(--color-text);
+    border-radius: 50%;
+    background-color: var(--color-background);
+    transition: all 0.3s ease;
+    border: 2px solid var(--color-border);
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 15px rgba(215, 0, 116, 0.4);
+    transform: translateY(-3px) scale(1.1);
+    outline: none;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.social-links .social-icon {
+    width: 30px;
+    height: 30px;
 }
 
 .contact-form {
@@ -650,6 +759,15 @@ a:hover {
     border-radius: calc(var(--curve) * 1px);
     box-shadow: var(--shadow-strong);
     border: 2px dotted var(--color-accent);
+}
+
+.contact-form h3 {
+    font-family: var(--font-body);
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--color-accent-light);
+    margin-bottom: 2.5rem;
+    text-align: center;
 }
 
 .form-group {
@@ -678,6 +796,13 @@ a:hover {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-text);
+    opacity: 0.6;
+    font-style: italic;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -702,6 +827,10 @@ a:hover {
     border-radius: calc(var(--curve) * 0.3px);
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .submit-btn:hover {
@@ -714,83 +843,518 @@ a:hover {
     transform: translateY(0);
 }
 
-/* FOOTER */
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+/* ==========================================
+   FOOTER STYLES - REDESIGNED
+   ========================================== */
 footer {
     background-color: var(--color-border);
     color: var(--color-text);
-    padding: 4rem 10rem 2rem;
-    border-top: 3px solid var(--color-accent);
+    padding: 2rem;
+    text-align: center;
+    border-top: 2px solid var(--color-accent);
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
-.footer-section h3 {
-    font-family: var(--font-title);
-    font-size: 2.2rem;
-    color: var(--color-accent);
-    margin-bottom: 1.5rem;
+/* Footer information - left side */
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
-.footer-section p,
-.footer-section li {
+.footer-info span {
     font-family: var(--font-body);
     font-size: 1.4rem;
-    line-height: 1.6;
     color: var(--color-text);
+    opacity: 0.9;
 }
 
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.8rem;
-}
-
-.footer-section a {
-    color: var(--color-text);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-    color: var(--color-accent);
-}
-
-.footer-social {
+/* Footer actions - right side with 3 icons */
+.footer-actions {
     display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-.footer-social svg {
+.footer-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.footer-actions a:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px rgba(215, 0, 116, 0.3);
+    transform: translateY(-3px) scale(1.1);
+    outline: none;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.footer-actions .social-icon {
     width: 30px;
     height: 30px;
-    transition: transform 0.3s ease;
 }
 
-.footer-social svg:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 8px var(--color-accent));
+/* Email link specific styling */
+.email-link:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px) scale(1.1);
 }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-accent-light);
+/* RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Large Tablets and Small Laptops */
+@media (max-width: 1024px) {
+    :root {
+        --section-padding: 4rem 6rem;
+    }
+
+    #welcome-section h1 {
+        font-size: 6rem;
+    }
+
+    #welcome-section h1 span {
+        font-size: 3rem;
+    }
+
+    .skills-container {
+        gap: 15px;
+    }
+
+    .skill-card {
+        min-width: 200px;
+    }
 }
 
-.footer-bottom p {
-    font-family: var(--font-body);
-    font-size: 1.4rem;
-    color: var(--color-text);
-    opacity: 0.8;
+/* Tablets */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 4rem 3rem;
+    }
+
+    /* Navigation */
+    #navbar {
+        padding: 1rem 2rem;
+    }
+
+    #navbar .nav-links {
+        gap: 1.5rem;
+    }
+
+    #navbar .nav-links li a {
+        font-size: 1.4rem;
+    }
+
+    /* Welcome Section */
+    #welcome-section {
+        flex-direction: column;
+        padding: 8rem 3rem 4rem;
+        height: auto;
+        text-align: center;
+    }
+
+    #welcome-section h1 {
+        font-size: 5rem;
+        text-align: center;
+    }
+
+    #welcome-section h1 span {
+        font-size: 2.5rem;
+    }
+
+    #welcome-section h2 {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    #left-side,
+    #right-side {
+        flex-basis: 100%;
+    }
+
+    .skill-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icons {
+        gap: 3rem;
+    }
+
+    .description {
+        margin-top: 3rem;
+        max-width: 100%;
+    }
+
+    /* About Me */
+    #about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about-me .about-me-text {
+        margin-left: 0;
+        margin-top: 3rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #about-me .profile-image img {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* Skills */
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-card {
+        min-width: 100%;
+        max-width: 400px;
+    }
+
+    /* Experience */
+    .timeline .card {
+        max-width: 100%;
+    }
+
+    .timeline .card:nth-child(odd),
+    .timeline .card:nth-child(even) {
+        padding: 20px 0 20px 20px;
+    }
+
+    .timeline .card:nth-child(odd)::before,
+    .timeline .card:nth-child(even)::before {
+        left: 0;
+        border-width: 5px 0 5px 5px;
+        border-radius: 50px 0 0 50px;
+    }
+
+    .timeline .card:nth-child(odd) > .info > h3::before,
+    .timeline .card:nth-child(even) > .info > h3::before {
+        left: -8px;
+    }
+
+    /* Projects */
+    .cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    /* Contact */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-item {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .contact-details h3 {
+        font-size: 1.4rem;
+    }
+
+    .contact-details p {
+        font-size: 1.2rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    .social-links a {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-links svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .contact-form {
+        padding: 3rem 2rem;
+    }
+
+    .contact-form h3 {
+        font-size: 2rem;
+    }
+
+    .form-group label {
+        font-size: 1.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1.4rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .submit-btn {
+        font-size: 1.6rem;
+        padding: 1.2rem 1.5rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-info {
+        text-align: center;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 3rem 2rem;
+    }
+
+    html {
+        font-size: 57.5%; /* Slightly smaller base font */
+    }
+
+    /* Navigation */
+    #navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    #navbar .logo img {
+        width: 45px;
+    }
+
+    #navbar .nav-links {
+        gap: 1rem;
+    }
+
+    #navbar .nav-links li a {
+        font-size: 1.2rem;
+    }
+
+    /* Welcome Section */
+    #welcome-section {
+        padding: 6rem 2rem 3rem;
+    }
+
+    #welcome-section h1 {
+        font-size: 4rem;
+    }
+
+    #welcome-section h1 span {
+        font-size: 2rem;
+    }
+
+    #welcome-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .skill-icons svg,
+    .social-icons svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-icons {
+        gap: 2rem;
+    }
+
+    /* Section titles */
+    #skills h2,
+    #projects h2,
+    #experience h2,
+    #contact h2 {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    /* About Me */
+    #about-me .profile-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* Skills */
+    .skill-card {
+        padding: 20px;
+    }
+
+    /* Experience */
+    .info {
+        padding: 15px;
+    }
+
+    .info h3 {
+        font-size: 1.8rem;
+    }
+
+    .info p,
+    .info ul li {
+        font-size: 1.4rem;
+    }
+
+    /* Contact */
+    .contact-item {
+        padding: 1.2rem;
+        gap: 1rem;
+    }
+
+    .contact-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-details p {
+        font-size: 1.1rem;
+    }
+
+    .contact-form {
+        padding: 2.5rem 1.5rem;
+    }
+
+    /* Footer */
+    .footer-social {
+        gap: 1rem;
+    }
+
+    .footer-social a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer-social svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+    :root {
+        --section-padding: 2rem 1.5rem;
+    }
+
+    #welcome-section h1 {
+        font-size: 3.5rem;
+    }
+
+    #welcome-section h1 span {
+        font-size: 1.8rem;
+    }
+
+    #skills h2,
+    #projects h2,
+    #experience h2,
+    #contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-form {
+        padding: 2rem 1rem;
+    }
+}
+
+/* High Resolution Displays */
+@media (min-width: 1400px) {
+    .container,
+    .contact-container {
+        max-width: 1400px;
+    }
+
+    #welcome-section h1 {
+        font-size: 9rem;
+    }
+
+    #welcome-section h1 span {
+        font-size: 4.5rem;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    .card-overlay,
+    .card-header {
+        transform: none;
+        position: static;
+    }
+
+    a {
+        text-decoration: underline;
+    }
 }
