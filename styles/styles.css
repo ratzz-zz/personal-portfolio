@@ -287,7 +287,8 @@ a:hover {
     font-family: var(--font-body);
     font-size: 2.2rem;
     margin-bottom: 30px;
-    color: var(--color-border);
+    color: var(--color-accent-light);
+    font-weight: bold;
 }
 
 .skill-card ul {
