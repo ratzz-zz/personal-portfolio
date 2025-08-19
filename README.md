@@ -1,6 +1,6 @@
 # Cinthya Lopez - Portfolio Website
 
-A modern, responsive portfolio website showcasing my skills, experience, and projects as a Front-end Developer. Built with clean HTML, CSS, and JavaScript with a focus on performance and accessibility.
+A modern, responsive portfolio website showcasing my skills, experience, and projects as a Front-end Developer. Built with clean HTML and CSS with a focus on performance and accessibility.
 
 ![Portfolio Preview](styles/src/Project-1.png)
 
@@ -17,7 +17,6 @@ A modern, responsive portfolio website showcasing my skills, experience, and pro
 
 - **HTML5**: Semantic markup and modern web standards
 - **CSS3**: Advanced styling with CSS Grid, Flexbox, and custom properties
-- **JavaScript**: Interactive features and smooth scrolling
 - **Git**: Version control and project management
 - **Font**: Google Fonts (Manufacturing Consent, Merriweather)
 
@@ -141,13 +140,6 @@ The project uses Google Fonts. To change fonts, update the links in `index.html`
 - Modify social media links
 - Update contact information
 
-## 📧 Contact Form
-
-The contact form uses a basic `mailto:` action for email integration. For production use, consider implementing:
-- Server-side form handling
-- Email service integration (EmailJS, Formspree, Netlify Forms)
-- Form validation and security measures
-
 ## 🌐 Browser Support
 
 - Chrome (latest)
@@ -188,13 +180,6 @@ The contact form uses a basic `mailto:` action for email integration. For produc
 - Text editor (VS Code recommended)
 - Git for version control
 
-### Recommended Extensions (VS Code)
-- Live Server
-- HTML CSS Support
-- Auto Rename Tag
-- Prettier - Code formatter
-- GitLens
-
 ### Best Practices
 - Use semantic HTML
 - Follow BEM CSS methodology
@@ -202,16 +187,10 @@ The contact form uses a basic `mailto:` action for email integration. For produc
 - Test across different browsers and devices
 - Optimize images before adding to project
 
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 👤 Author
 
-**Cinthya Lopez**
-- Email: yael.lopez.103@gmail.com
+**Ratzz-zz**
 - GitHub: [@ratzz-zz](https://github.com/ratzz-zz)
-- LinkedIn: [Cinthya Lopez](https://www.linkedin.com/in/cinthya-lopez-20855017b/)
 
 ## 🤝 Contributing
 
